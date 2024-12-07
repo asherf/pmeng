@@ -1,6 +1,5 @@
 import chainlit as cl
 import openai
-import base64
 import pathlib
 import logging
 import os
