@@ -41,7 +41,7 @@ async def on_message(message: cl.Message):
     response_message = cl.Message(content="")
     await response_message.send()
     stream = await client.chat.completions.create(
-        messages=message_history, stream=True, model=MAIN_MODEL, temperature=MODEL_TEMPERATURE, max_tokens=300
+        messages=message_history, stream=True, model=MAIN_MODEL, temperature=MODEL_TEMPERATURE, max_tokens=4000
     )
     async for part in stream:
         if token := part.choices[0].delta.content or "":
