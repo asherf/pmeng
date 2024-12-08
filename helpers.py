@@ -36,14 +36,10 @@ def get_user_message(message: cl.Message) -> dict:
     if len(code_files) > 1:
         _logger.warning("I can only process one code file at a time.")
         return {}
-    code_file_content = pathlib.Path(code_files[0].path).read_text()
+    fp = pathlib.Path(code_files[0].path)
+    code_file_content = fp.read_text()
+    msg = message.content or "Explain the code file: "
     return {
         "role": "user",
-        "content": [
-            {
-                "type": "text",
-                "text": message.content or "Explain the code file",
-            },
-            {"type": "text", "text": code_file_content},
-        ],
+        "content": f"{msg}\n\n\n{fp.name}\n{code_file_content}",
     }
