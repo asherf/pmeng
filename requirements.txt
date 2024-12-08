@@ -31,6 +31,7 @@ idna==3.10
 importlib_metadata==8.5.0
 ipdb==0.13.13
 ipython==8.30.0
+isort==5.13.2
 jedi==0.19.2
 jiter==0.8.0
 jsonpatch==1.33

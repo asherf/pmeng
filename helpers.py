@@ -1,12 +1,12 @@
-import os
-import chainlit as cl
 import logging
+import os
 import pathlib
-import openai
-from prompts import CODE_FILE_SUMMARIZER_PROMPTS
 
+import chainlit as cl
+import openai
 from langsmith.wrappers import wrap_openai
 
+from prompts import CODE_FILE_SUMMARIZER_PROMPTS
 
 MAIN_MODEL = "gpt-4o-mini"
 MODEL_TEMPERATURE = 0.2

@@ -1,7 +1,9 @@
-import chainlit as cl
 import logging
 
-from helpers import MAIN_MODEL, MODEL_TEMPERATURE, get_user_message, client, get_prompt
+import chainlit as cl
+
+from helpers import (MAIN_MODEL, MODEL_TEMPERATURE, client, get_prompt,
+                     get_user_message)
 
 _logger = logging.getLogger(__name__)
 
